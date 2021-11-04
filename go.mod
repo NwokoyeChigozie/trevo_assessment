@@ -1,6 +1,7 @@
 module github.com/gregoflash05/trove
 
-go 1.17
+// +heroku goVersion go1.13
+go 1.13
 
 require (
 	github.com/go-playground/validator/v10 v10.9.0

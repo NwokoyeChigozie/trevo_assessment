@@ -1,12 +1,18 @@
 package controllers
 
 import (
+	"bytes"
+	"encoding/json"
 	"errors"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"math"
 	"net/http"
+	"net/url"
 	"time"
 
+	"github.com/gofrs/uuid"
 	"github.com/gregoflash05/trove/models"
 	"github.com/gregoflash05/trove/utils"
 	"github.com/mitchellh/mapstructure"
@@ -162,6 +168,19 @@ func PayBackLoan(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	user := models.User{}
+	objID, _ := primitive.ObjectIDFromHex(userID)
+
+	userMap, err := utils.GetMongoDBDoc(models.UserCollectionName, bson.M{"_id": objID})
+
+	if err != nil {
+		utils.GetError(errors.New("user not found"), nttrep, response)
+		return
+	}
+
+	bsonBytes, _ = bson.Marshal(userMap)
+	bson.Unmarshal(bsonBytes, &user)
+
 	if rBody.Amount > loanD.Balance {
 		utils.GetError(fmt.Errorf("payment is beyond your loan balance"), nttrep, response)
 		return
@@ -174,7 +193,47 @@ func PayBackLoan(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	utils.GetSuccess("Payment successfully", res, response)
+	method := "POST"
+	Url, err := url.Parse("https://api.flutterwave.com/v3/payments")
+	if err != nil {
+		utils.GetError(err, nttrep, response)
+		return
+	}
+
+	txRef, _ := uuid.NewV4()
+	fltBody := models.FlutterRequestBody{
+		TxRef:          fmt.Sprintf("%v", txRef),
+		Amount:         fmt.Sprintf("%f", rBody.Amount),
+		Currency:       "USD",
+		RedirectUrl:    "https://trove-assessment.herokuapp.com/loan",
+		PaymentOptions: "card",
+		Customer: models.Customer{
+			Email: user.Email,
+			Name:  user.FullName,
+		},
+		Customizations: models.Customizations{
+			Title:       "Trove Assessment",
+			Description: "Loan Payment",
+		},
+	}
+
+	buf := new(bytes.Buffer)
+	json.NewEncoder(buf).Encode(fltBody)
+
+	req, _ := http.NewRequest(method, Url.String(), buf)
+	req.Header.Add("Authorization", "Bearer FLWSECK_TEST-e034e324f8562b334dc2955f6f3ca3e9-X")
+	req.Header.Add("Content-Type", "application/json")
+
+	client := &http.Client{}
+	resp, e := client.Do(req)
+	if e != nil {
+		log.Fatal(e)
+	}
+
+	defer resp.Body.Close()
+	body, _ := ioutil.ReadAll(resp.Body)
+
+	utils.GetSuccess("Payment successfully", string(body), response)
 }
 
 func CreateLoan(userID string, rBody models.TakeLoanRequest) error {

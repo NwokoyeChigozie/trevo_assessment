@@ -21,3 +21,23 @@ type Loan struct {
 	TimeTaken   int     `bson:"time_taken"  json:"time_taken"`
 	LastPayment int     `bson:"last_payment"  json:"last_payment"`
 }
+
+type FlutterRequestBody struct {
+	TxRef          string         `bson:"tx_ref"  json:"tx_ref"`
+	Amount         string         `bson:"amount"  json:"amount"`
+	Currency       string         `bson:"currency"  json:"currency"`
+	RedirectUrl    string         `bson:"redirect_url"  json:"redirect_url"`
+	PaymentOptions string         `bson:"payment_options"  json:"payment_options"`
+	Customer       Customer       `bson:"customer"  json:"customer"`
+	Customizations Customizations `bson:"customizations"  json:"customizations"`
+}
+
+type Customer struct {
+	Email string `bson:"email"  json:"email"`
+	Name  string `bson:"name"  json:"name"`
+}
+
+type Customizations struct {
+	Title       string `bson:"title"  json:"title"`
+	Description string `bson:"description"  json:"description"`
+}

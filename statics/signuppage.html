@@ -1,0 +1,409 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Blanton Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="/statics/img/favicon.ico">
+
+    <link rel="stylesheet" href="/statics/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/statics/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/statics/css/animate.min.css">
+    <link rel="stylesheet" href="/statics/css/meanmenu.css">
+    <link rel="stylesheet" href="/statics/css/magnific-popup.css">
+    <link rel="stylesheet" href="/statics/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/statics/css/slick.css">
+    <link rel="stylesheet" href="/statics/css/default.css">
+    <link rel="stylesheet" href="/statics/css/style.css">
+    <link rel="stylesheet" href="/statics/css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://use.fontawesome.com/1731be311f.js"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .goog-te-gadget .goog-te-combo {
+            margin: 4px 0 !important;
+            /*width: 300px;*/
+            text-transform: uppercase;
+            font-weight: 400;
+            font-weight: bold;
+            margin-top: 15px !important;
+        }
+        
+        .goog-logo-link {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top-area theme-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <ul class="header-wrapper">
+                            <li>
+                                <div class="header-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="header-text">
+                                    <a href="#">
+                                        <?php echo $support_phone;?>
+                                    </a>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="header-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="header-text">
+                                    <a href="#">
+                                        <?php echo $support_email;?>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3">
+                        <!-- <div class="logo">
+                            <a href="#"><img src="/statics/img/logo.png" style="width: 180px; height: auto;" alt="" /></a>
+                            <span id="google_translate_element"></span>
+                        </div> -->
+                    </div>
+                    <div class="col-xl-9 col-lg-9">
+                        <div class="main-menu text-center">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="/login">Log In</a></li>
+                                    <li><a href="/signup">Sign Up</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="breadcrumb-area pt-245 pb-245 " style="background-image:url(/statics/img/bg9.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-wrapper text-center">
+                        <div class="breadcrumb-text">
+                            <h1>Sign Up</h1>
+                        </div>
+                        <div class="breadcrumb-menu mt-20">
+                            <ul>
+                                <li><a href="?a=home">home</a></li>
+                                <li><span>Sign Up</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-area gray-bg pt-120" style="margin-bottom: -400px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-bg white-bg mt-60">
+                        <div class="section-title section3-title title-contact text-center mb-50">
+                            <h1>Sign Up</h1>
+                        </div>
+                        <div class="input-row reg_message" style="padding: 0px !important; margin: 25px auto !important;text-align: center;display: flex;justify-content: center; ">
+                            <!-- <div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:5px 85px;margin-top:0px"> Registration Successful</div> -->
+                        </div>
+                        <form method=post id="signup_form">
+                            <input type="hidden" name="form_id" value="16336787898254">
+                            <input type="hidden" name="form_token" value="bbdc861d340ea57d319f9fc83226f5c2">
+                            <input type=hidden name=a value="signup">
+                            <input type=hidden name=action value="signup">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 mb-20">
+                                    <input type=text name="fullname" required id="register_fullname" value='' placeholder="Your Full Name" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
+                                </div>
+                                <div class="col-lg-6 col-md-6 mb-20">
+                                    <input type=password name="password" required id="register_password" value='' placeholder="Password" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
+                                </div>
+                                <!-- <div class="col-lg-6 col-md-6 mb-20">
+                                    <input type=password name="password2" id="register_password2" value='' placeholder="Confirm Password" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
+                                </div> -->
+                                <div class="col-lg-6 col-md-6 mb-20">
+                                    <input type="email" required name="email" id="register_email" value='' placeholder="E-mail Address" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-20">
+
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 mb-20">
+                                <input type=checkbox name=agree value=1 required> I agree with <a href="?a=rules">Terms
+                                        and conditions</a></td>
+                            </div>
+                            <div class="text-center mt-20">
+                                <button class="btn" id="register_submit" type="submit">Sign Up</button>
+                            </div>
+
+
+                    </div>
+                    <!-- <div class="alert alert-sucess text-center">testing output</div> -->
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="map-area">
+        <div id="map" class="map"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#signup_form").submit(function(event) {
+                event.preventDefault();
+
+
+                var full_name = $("#register_fullname").val();
+                var email = $("#register_email").val();
+                var password = $("#register_password").val();
+                // var password2 = $("#register_password2").val();
+
+                $(".reg_message").html(' ');
+                $("#register_submit").html('<b>....</b>');
+                var settings = {
+                    "url": "/v1/register",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({
+                        "full_name": full_name,
+                        "email": email,
+                        "password": password
+                    }),
+                };
+
+                $.ajax(settings).done(function(response) {
+                    console.log(response)
+                    if (response.status == 200) {
+                        success();
+                    } else {
+                        console.log(response)
+                        error(response.message);
+                    }
+                });
+
+
+                // $.ajax({
+                //     type: "POST",
+                //     url: "/v1/register",
+                //     data: {
+                //         ref: ref,
+                //         full_name: full_name,
+                //         username: username,
+                //         email: email,
+                //         email1: email1,
+                //         password: password,
+                //         password2: password2,
+                //         bitcoin_id: bitcoin_id,
+                //         ethereum_id: ethereum_id,
+                //         create_button: create_button,
+                //         agree: agree
+                //     },
+                //     success: function(response) {
+                //         $(".reg_message").html(response);
+                //         //      console.log(response);
+                //         //      console.log("Done"); 
+                //         $("#register_submit").html('Sign Up');
+                //     },
+                //     error: function(response) {
+                //         console.log(response);
+                //         $("#register_submit").html('Sign Up');
+                //     }
+                // });
+                $("#register_submit").html('Sign Up');
+            });
+
+        });
+    </script>
+
+    <script language=javascript>
+        function error(message) {
+            errm = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:5px 85px;margin-top:0px">' + message + '</div>'
+            document.querySelector(".reg_message").innerHTML = errm;
+        }
+
+        function success() {
+
+            errm = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">Your registration was successfull. </div>';
+            document.querySelector(".reg_message").innerHTML = errm;
+        }
+
+        function initFocus(id) {
+            document.getElementById(id).focus();
+        }
+
+        function checkform(full_name, username, email, email1, password, password2, bitcoin_id, ethereum_id,
+            create_button) {
+
+            if (full_name == '') {
+                error("Please enter your full name!");
+                initFocus("register_fullname");
+                return false;
+            }
+
+            if (username == '') {
+                error("Please enter your username!");
+                initFocus("register_username");
+                return false;
+            }
+
+            if (!username.match(/^[A-Za-z0-9_\-]+$/)) {
+                error("For username, you should use English letters and digits only!");
+                initFocus("register_username");
+                return false;
+            }
+
+            if (password == '') {
+                error("Please enter your password!");
+                initFocus("register_password");
+                return false;
+            }
+
+            if (password != password2) {
+                error("Passwords do not match");
+                initFocus("register_password2");
+                return false;
+            }
+
+            if (bitcoin_id == '') {
+                error("Please enter your Bitcoin Account ID!");
+                initFocus("register_bitcoin_id");
+                return false;
+            }
+            if (ethereum_id == '') {
+                error("Please enter your Ethereum adAccount ID!");
+                initFocus("register_ethereum_id");
+                return false;
+            }
+
+            if (email == '') {
+                error("Please enter your e-mail address!");
+                initFocus("register_email");
+                return false;
+            }
+
+            if (!email.match(/^[^\@]+\@[^\@]+\.\w{2,4}$/)) {
+                error("Invalid E-mail Address!");
+                initFocus("register_email");
+                return false;
+            }
+
+            if (email != email1) {
+                error("E-mail addresses do not match");
+                initFocus("register_email1");
+                return false;
+            }
+
+
+            return true;
+        }
+
+        function IsNumeric(sText) {
+            var ValidChars = "0123456789";
+            var IsNumber = true;
+            var Char;
+            if (sText == '') return false;
+            for (i = 0; i < sText.length && IsNumber == true; i++) {
+                Char = sText.charAt(i);
+                if (ValidChars.indexOf(Char) == -1) {
+                    IsNumber = false;
+                }
+            }
+            return IsNumber;
+        }
+    </script>
+
+
+
+
+
+
+
+    <!-- <h1>PDF Example with iframe</h1> -->
+    <!-- <iframe src="./cert/hong_kong_cert_of_incorporation_blanton_limited.pdf" width="10%" height="10%">
+    </iframe> -->
+
+
+
+    <footer>
+    </footer>
+
+    <script src="/statics/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/statics/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/statics/js/popper.min.js"></script>
+    <script src="/statics/js/bootstrap.min.js"></script>
+    <script src="/statics/js/jquery.meanmenu.js"></script>
+    <script src="/statics/js/owl.carousel.min.js"></script>
+    <script src="/statics/js/isotope.pkgd.min.js"></script>
+    <script src="/statics/js/waypoints.min.js"></script>
+    <script src="/statics/js/jquery.counterup.min.js"></script>
+    <script src="/statics/js/jquery.nice-select.min.js"></script>
+    <script src="/statics/js/slick.min.js"></script>
+    <script src="/statics/js/ajax-form.js"></script>
+    <script src="/statics/js/jquery.easypiechart.min.js"></script>
+    <script src="/statics/js/wow.min.js"></script>
+    <script src="/statics/js/jquery.scrollUp.min.js"></script>
+    <script src="/statics/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/statics/js/jquery.magnific-popup.min.js"></script>
+    <script src="/statics/js/plugins.js"></script>
+    <script src="/statics/js/main.js"></script>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!--Start of Tawk.to Script-->
+    <!-- <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6095f5d6185beb22b30b3bfb/1f54sgjse';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script> -->
+    <!--End of Tawk.to Script-->
+
+</body>
+
+</html>

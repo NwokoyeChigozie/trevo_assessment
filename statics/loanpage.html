@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/statics/img/favicon.png" />
+    <title>Blanton Limited</title>
+    <!-- Custom CSS -->
+
+    <link href="/statics/scss/export.css" rel="stylesheet" />
+    <link href="/statics/scss/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/statics/scss/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/statics/scss/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://use.fontawesome.com/1731be311f.js"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="/statics/sjs/data.js"></script>
+    <script src="/statics/sjs/loanpage.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <style>
+        .st_amount {
+            font-size: 20px !important;
+        }
+    </style>
+</head>
+
+<body class="header-fix fix-sidebar">
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="?a=account">
+                        <!-- Logo icon -->
+                        <b><img src="/statics/img/slogo.png" alt="homepage" class="dark-logo" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span><img src="/statics/img/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello <span class="fullname"></span>! <i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/profile"> Profile</a></li>
+                                    <li><a href="#" class="logout_button"> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li><a href="/account"><i class="fas fa-home"></i>Dashboard</a></li>
+                        <li><a href="/loan"><i class="fas fa-download"></i>Loan</a></li>
+                        <li><a href="/profile"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="#" class="logout_button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+
+
+
+
+
+
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Loan</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Loan</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+
+                <br />
+
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-bag f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>$
+                                        <span id="total_portfolio_value" class="st_amount total_portfolio_value">0.00</span>
+                                    </h4>
+                                    <p class="m-b-0">Total Portfolio Value</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-comment f-s-40 color-success"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>$
+                                        <span id="loan_balance" class="st_amount">0</span>
+                                    </h4>
+                                    <p class="m-b-0">Loan Balance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-vector f-s-40 color-warning"></i></span>
+                                </div>
+
+                                <div class="media-body text-right">
+                                    <h4>$
+                                        <span id="total_loan_value" class="st_amount total_loan_value"></span>
+                                    </h4>
+                                    <p class="m-b-0">Last Loan Value</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <div class="card p-30 bg-primary">
+                            <h5 class="text-white">Take Loan</h5>
+
+                            <div class="card-body">
+                                <form action="" method=post id="take_loan_form">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless table-centered m-0">
+                                            <tr>
+                                                <td>Amount($):</td>
+                                                <td><input required type="number" id="loan_amount" name="loan_amount" value='' class="form-control" size=30>
+                                            </tr>
+                                            <tr>
+                                                <td>Duration:</td>
+                                                <!-- <td><input required type=text id="loan_duration" name=phone value='' class="form-control" size=30> -->
+                                                <td>
+                                                    <select id="loan_duration" name=type class="form-control">
+                                                            <option value="15552000">6 Months</option>
+                                                            <option value="18144000">7 Months</option>
+                                                            <option value="20736000">8 Months</option>
+                                                            <option value="23328000">9 Months</option>
+                                                            <option value="25920000">10 Months</option>
+                                                            <option value="28512000">11 Months</option>
+                                                            <option value="31104000">12 Months</option>
+                                                        </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><input type=submit id="loan_button" value="Request Loan" class="btn btn-primary btn-sm waves-effect"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="e_message"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+                <div class="row" id="payback_section">
+                    <div class="col-sm-12 text-left">
+                        <div class="card p-30 bg-primary">
+                            <h5 class="text-white">PayBack Loan</h5>
+                            <h4>Total Amount Due: $<span id="due_amount" class="st_amount"></span></h4>
+                            <h4 id="due_next_info">$<span id="amount_due_next" class="st_amount"></span> is Due on $<span id="date_due_next" class="st_amount"></span></h4>
+                            <div class="card-body">
+                                <form action="" method=post id="pay_loan_form">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless table-centered m-0">
+                                            <tr>
+                                                <td>Amount($):</td>
+                                                <td><input required type="number" id="pay_loan_amount" name="pay_loan_amount" value='' class="form-control" size=30>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><input type=submit id="pay_loan_button" value="Pay Back Loan" class="btn btn-primary btn-sm waves-effect"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="et_message"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+                <br />
+                <br />
+                <br />
+            </div>
+
+
+
+            <script>
+                $(document).ready(function() {
+                    $("#take_loan_form").submit(function(event) {
+                        event.preventDefault();
+
+                        var loan_amount = $("#loan_amount").val();
+                        var loan_duration = $("#loan_duration").val();
+
+                        $("#loan_button").val('...');
+                        var settings = {
+                            "url": "/v1/loan",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer " + token
+                            },
+                            "data": JSON.stringify({
+                                "amount": parseInt(loan_amount),
+                                "duration": parseInt(loan_duration)
+                            }),
+                        };
+
+                        $.ajax(settings).done(function(response) {
+                            console.log(response);
+                            if (response.status == 200) {
+                                var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                                $(".e_message").html(message);
+                            } else {
+                                var response = JSON.parse(response);
+                                var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                                $(".e_message").html(message);
+                            }
+                        });
+                        $("#loan_button").val('Request Loan');
+
+                    });
+
+                });
+            </script>
+
+            <script>
+                $(document).ready(function() {
+                    $("#pay_loan_form").submit(function(event) {
+                        event.preventDefault();
+
+                        var pay_loan_amount = $("#pay_loan_amount").val();
+
+                        $("#pay_loan_button").val('...');
+                        var settings = {
+                            "url": "/v1/loan",
+                            "method": "PUT",
+                            "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer " + token
+                            },
+                            "data": JSON.stringify({
+                                "amount": parseInt(pay_loan_amount)
+                            }),
+                        };
+
+                        // $.ajax(settings).done(function(response) {
+                        //     console.log(response);
+                        //     if (response.status == 200) {
+                        //         var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                        //         $(".et_message").html(message);
+                        //     } else {
+                        //         var response = JSON.parse(response);
+                        //         var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                        //         $(".et_message").html(message);
+                        //     }
+                        // });
+                        link = FlutterPay(pay_loan_amount)
+                        window.location = link;
+                        $("#pay_loan_button").val('Pay Back Loan');
+
+                    });
+
+                    function FlutterPay(pay_amount) {
+                        var settings = {
+                            "url": "https://api.flutterwave.com/v3/payments",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer FLWSECK_TEST-e034e324f8562b334dc2955f6f3ca3e9-X",
+                                "Content-Type": "application/json"
+                            },
+                            "data": JSON.stringify({
+                                "tx_ref": "" + Math.random().toString(36).slice(2) + "",
+                                "amount": pay_amount,
+                                "currency": "USD",
+                                "redirect_url": "localhost:7000/loan",
+                                "payment_options": "card",
+                                "customer": {
+                                    "email": customerEmail,
+                                    "name": customerName
+                                },
+                                "customizations": {
+                                    "title": "Trove Assessment",
+                                    "description": "Loan Payment"
+                                }
+                            }),
+                        };
+                        console.log(settings)
+                        $.ajax(settings).done(function(response) {
+                            console.log(response);
+                            return response.data.link
+                        });
+                    }
+
+                });
+            </script>
+
+
+
+            <script>
+                function makePayment(pay_amount) {
+                    FlutterwaveCheckout({
+                        public_key: "FLWPUBK_TEST-99801e33dd4d2568a8352fa17d403828-X",
+                        tx_ref: "" + Math.random().toString(36).slice(2) + "",
+                        amount: pay_amount,
+                        currency: "USD",
+                        country: "Nigeria",
+                        payment_options: " ",
+                        customer: {
+                            email: customerEmail,
+                            name: customerName,
+                        },
+                        callback: function(data) { // specified callback function
+                            console.log(data);
+                        },
+                        customizations: {
+                            title: "Trove Assessment",
+                            description: "Loan Payment",
+                        },
+                    });
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- footer -->
+            <div class="logout_message"></div>
+
+            <footer class="footer"> ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> Blanton Limited All Right Reserved.
+            </footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="/statics/sjs/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/statics/sjs/popper.min.js"></script>
+    <script src="/statics/sjs/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/statics/sjs/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="/statics/sjs/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="/statics/sjs/sticky-kit.min.js"></script>
+
+    <!-- Amchart -->
+    <script src="1/https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="/statics/sjs/serial.js"></script>
+    <script src="/statics/sjs/export.min.js"></script>
+    <script src="/statics/sjs/light.js"></script>
+    <script src="/statics/sjs/ammap.js"></script>
+    <script src="/statics/sjs/worldLow.js"></script>
+    <script src="/statics/sjs/pie.js"></script>
+    <script src="/statics/sjs/amstock.js"></script>
+    <script src="/statics/sjs/amchart-init.js"></script>
+    <script src="https://kit.fontawesome.com/a0c361a166.js" crossorigin="anonymous"></script>
+
+    <script src="/statics/sjs/jquery.simpleWeather.min.js"></script>
+    <script src="/statics/sjs/weather-init.js"></script>
+    <script src="/statics/sjs/owl.carousel.min.js"></script>
+    <script src="/statics/sjs/owl.carousel-init.js"></script>
+    <script src="/statics/sjs/scripts.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/statics/sjs/custom.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".logout_button").click(function(event) {
+                event.preventDefault();
+                var logout_button = $(".logout_button").val();
+                localStorage.clear();
+                navigateToLogin();
+
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+
+</body>
+
+</html>

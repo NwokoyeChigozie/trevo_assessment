@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/statics/img/favicon.png" />
+    <title>Blanton Limited</title>
+    <!-- Custom CSS -->
+
+    <link href="/statics/scss/export.css" rel="stylesheet" />
+    <link href="/statics/scss/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/statics/scss/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/statics/scss/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://use.fontawesome.com/1731be311f.js"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="/statics/sjs/data.js"></script>
+    <script src="/statics/sjs/accountpage.js"></script>
+    <style>
+        .st_amount {
+            font-size: 20px !important;
+        }
+    </style>
+</head>
+
+<body class="header-fix fix-sidebar">
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="?a=account">
+                        <!-- Logo icon -->
+                        <b><img src="/statics/img/slogo.png" alt="homepage" class="dark-logo" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span><img src="/statics/img/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello <span class="fullname"></span>! <i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/profile"> Profile</a></li>
+                                    <li><a href="#" class="logout_button"> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li><a href="/account"><i class="fas fa-home"></i>Dashboard</a></li>
+                        <li><a href="/loan"><i class="fas fa-download"></i>Loan</a></li>
+                        <li><a href="/profile"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="#" class="logout_button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+
+
+
+
+
+
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Dashboard</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+
+                <br />
+
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-bag f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>$
+                                        <span id="total_portfolio_value" class="st_amount">0.00</span>
+                                    </h4>
+                                    <p class="m-b-0">Total Portfolio Value</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-comment f-s-40 color-success"></i></span>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h4>$
+                                        <span id="number_of_positions" class="st_amount">0</span>
+                                    </h4>
+                                    <p class="m-b-0">Number of Positions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-vector f-s-40 color-warning"></i></span>
+                                </div>
+
+                                <div class="media-body text-right">
+                                    <h4>$
+                                        <span id="total_loan_value" class="st_amount"></span>
+                                    </h4>
+                                    <p class="m-b-0">Loan Balance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="card p-30 bg-primary">
+                            <h3 class="text-white">Portfolio Positions</h3>
+                            <div class="card-body">
+                                <div class="card-box">
+                                    <h4 class="mb-0">
+                                        <span class="fullname"></span>
+                                    </h4>
+                                    <p class="text-white">
+                                        <span class="email"></span>
+                                    </p>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-centered text-white" style="width: 500px !important;">
+                                            <thead>
+                                                <th>Symbol</th>
+                                                <th>Total Quantity</th>
+                                                <th>Price Per Share</th>
+                                                <th>Equity Value</th>
+                                            </thead>
+                                            <tbody id="positons_table">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end card-box -->
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <br />
+                <br />
+                <br />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- footer -->
+            <div class="logout_message"></div>
+
+            <footer class="footer"> ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> Blanton Limited All Right Reserved.
+            </footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="/statics/sjs/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/statics/sjs/popper.min.js"></script>
+    <script src="/statics/sjs/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/statics/sjs/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="/statics/sjs/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="/statics/sjs/sticky-kit.min.js"></script>
+
+    <!-- Amchart -->
+    <script src="1/https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="/statics/sjs/serial.js"></script>
+    <script src="/statics/sjs/export.min.js"></script>
+    <script src="/statics/sjs/light.js"></script>
+    <script src="/statics/sjs/ammap.js"></script>
+    <script src="/statics/sjs/worldLow.js"></script>
+    <script src="/statics/sjs/pie.js"></script>
+    <script src="/statics/sjs/amstock.js"></script>
+    <script src="/statics/sjs/amchart-init.js"></script>
+    <script src="https://kit.fontawesome.com/a0c361a166.js" crossorigin="anonymous"></script>
+
+    <script src="/statics/sjs/jquery.simpleWeather.min.js"></script>
+    <script src="/statics/sjs/weather-init.js"></script>
+    <script src="/statics/sjs/owl.carousel.min.js"></script>
+    <script src="/statics/sjs/owl.carousel-init.js"></script>
+    <script src="/statics/sjs/scripts.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/statics/sjs/custom.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".logout_button").click(function(event) {
+                event.preventDefault();
+                var logout_button = $(".logout_button").val();
+                localStorage.clear();
+                navigateToLogin();
+
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/statics/img/favicon.png" />
+    <title>Blanton Limited</title>
+    <!-- Custom CSS -->
+
+    <link href="/statics/scss/export.css" rel="stylesheet" />
+    <link href="/statics/scss/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/statics/scss/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/statics/scss/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://use.fontawesome.com/1731be311f.js"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="/statics/sjs/data.js"></script>
+    <script src="/statics/sjs/profilepage.js"></script>
+    <style>
+        .st_amount {
+            font-size: 20px !important;
+        }
+    </style>
+</head>
+
+<body class="header-fix fix-sidebar">
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="?a=account">
+                        <!-- Logo icon -->
+                        <b><img src="/statics/img/slogo.png" alt="homepage" class="dark-logo" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span><img src="/statics/img/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello <span class="fullname"></span>! <i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/profile"> Profile</a></li>
+                                    <li><a href="#" class="logout_button"> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li><a href="/account"><i class="fas fa-home"></i>Dashboard</a></li>
+                        <li><a href="/loan"><i class="fas fa-download"></i>Loan</a></li>
+                        <li><a href="/profile"><i class="fas fa-user"></i>Profile</a></li>
+                        <li><a href="#" class="logout_button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+
+
+
+
+
+
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Profile</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Profile</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <div class="card p-30 bg-primary">
+                            <h5 class="text-white">Your account</h5>
+
+                            <div class="card-body">
+                                <form action="" method=post id="edit_account_form"><input type="hidden" name="form_id" value="16344586454280"><input type="hidden" name="form_token" value="09895740034c82b8842e4b5c3bade75d">
+                                    <input type=hidden name=a value=edit_account>
+                                    <input type=hidden name=action value=edit_account>
+                                    <input type=hidden name=say value="">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless table-centered m-0">
+                                            <tr>
+                                                <td>Your Full Name:</td>
+                                                <td><input required type=text id="edit_full_name" name=fullname value='' class="form-control" size=30>
+                                            </tr>
+                                            <tr>
+                                                <td>Your Phone Number:</td>
+                                                <td><input required type=text id="edit_phone" name=phone value='' class="form-control" size=30>
+                                            </tr>
+                                            <tr>
+                                                <td>Your E-mail address:</td>
+                                                <td><input readonly type=text id="edit_email" name=email value='' class="form-control email" size=30></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><input type=submit id="edit_account_button" value="Change Account data" class="btn btn-primary btn-sm waves-effect"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="e_message"></div>
+                            </div>
+
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+                            <div class="card-body">
+                                <form action="" method=post id="edit_password_form"><input type="hidden" name="form_id" value="16344586454280"><input type="hidden" name="form_token" value="09895740034c82b8842e4b5c3bade75d">
+                                    <input type=hidden name=a value=edit_account>
+                                    <input type=hidden name=action value=edit_account>
+                                    <input type=hidden name=say value="">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless table-centered m-0">
+
+                                            <tr>
+                                                <td>New Password:</td>
+                                                <td><input required type=password id="editPassword" name=password value="" class="form-control" size=30>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Retype Password:</td>
+                                                <td><input required type=password id="editRePassword" name=password2 value="" class="form-control" size=30>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td><input type=submit id="edit_password_button" value="Change Password" class="btn btn-primary btn-sm waves-effect"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="ep_message"></div>
+                            </div>
+
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    $("#edit_password_form").submit(function(event) {
+                        event.preventDefault();
+
+                        var password = $("#editPassword").val();
+                        var password2 = $("#editRePassword").val();
+
+                        $("#edit_password_button").val('...');
+                        var settings = {
+                            "url": "/v1/password",
+                            "method": "PUT",
+                            "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer " + token,
+                                "Content-Type": "application/json"
+                            },
+                            "data": JSON.stringify({
+                                "password": password,
+                                "confirm_password": password2
+                            }),
+                        };
+
+                        $.ajax(settings).done(function(response) {
+                            console.log(response);
+                            if (response.status == 200) {
+                                var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">Password Successfully Updated</div>';
+                                $(".ep_message").html(message);
+                            } else {
+                                var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                                $(".ep_message").html(message);
+                            }
+                        });
+                        $("#edit_password_button").val('Change Password');
+
+                    });
+
+                });
+            </script>
+
+            <script>
+                $(document).ready(function() {
+                    $("#edit_account_form").submit(function(event) {
+                        event.preventDefault();
+
+                        var fullname = $("#edit_full_name").val();
+                        var phone = $("#edit_phone").val();
+
+
+                        $("#edit_account_button").val('...');
+                        var settings = {
+                            "url": "/v1/profile",
+                            "method": "PUT",
+                            "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer " + token,
+                                "Content-Type": "application/json"
+                            },
+                            "data": JSON.stringify({
+                                "full_name": fullname,
+                                "phone": phone
+                            }),
+                        };
+
+                        $.ajax(settings).done(function(response) {
+                            console.log(response);
+                            if (response.status == 200) {
+                                var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">Profile Successfully Updated</div>';
+                                $(".e_message").html(message);
+                            } else {
+                                var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                                $(".e_message").html(message);
+                            }
+                        });
+                        $("#edit_account_button").val('Change Account data');
+
+
+                    });
+
+                });
+            </script>
+
+            <script language="javascript">
+                function IsNumeric(sText) {
+                    var ValidChars = "0123456789.";
+                    var IsNumber = true;
+                    var Char;
+                    if (sText == '') return false;
+                    for (i = 0; i < sText.length && IsNumber == true; i++) {
+                        Char = sText.charAt(i);
+                        if (ValidChars.indexOf(Char) == -1) {
+                            IsNumber = false;
+                        }
+                    }
+                    return IsNumber;
+                }
+
+                function checkform() {
+                    if (document.editform.fullname.value == '') {
+                        alert("Please type your full name!");
+                        document.editform.fullname.focus();
+                        return false;
+                    }
+
+
+                    if (document.editform.password.value != document.editform.password2.value) {
+                        alert("Please check your password!");
+                        document.editform.fullname.focus();
+                        return false;
+                    }
+
+
+
+
+                    if (document.editform.email.value == '') {
+                        alert("Please enter your e-mail address!");
+                        document.editform.email.focus();
+                        return false;
+                    }
+
+
+
+                    for (i in document.editform.elements) {
+                        f = document.editform.elements[i];
+                        if (f.name && f.name.match(/^pay_account/)) {
+                            if (f.value == '') continue;
+                            var notice = f.getAttribute('data-validate-notice');
+                            var invalid = 0;
+                            if (f.getAttribute('data-validate') == 'regexp') {
+                                var re = new RegExp(f.getAttribute('data-validate-regexp'));
+                                if (!f.value.match(re)) {
+                                    invalid = 1;
+                                }
+                            } else if (f.getAttribute('data-validate') == 'email') {
+                                var re = /^[^\@]+\@[^\@]+\.\w{2,4}$/;
+                                if (!f.value.match(re)) {
+                                    invalid = 1;
+                                }
+                            }
+                            if (invalid) {
+                                alert('Invalid account format. Expected ' + notice);
+                                f.focus();
+                                return false;
+                            }
+                        }
+                    }
+
+                    return true;
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- footer -->
+            <div class="logout_message"></div>
+
+            <footer class="footer"> ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> Blanton Limited All Right Reserved.
+            </footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="/statics/sjs/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/statics/sjs/popper.min.js"></script>
+    <script src="/statics/sjs/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/statics/sjs/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="/statics/sjs/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="/statics/sjs/sticky-kit.min.js"></script>
+
+    <!-- Amchart -->
+    <script src="1/https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="/statics/sjs/serial.js"></script>
+    <script src="/statics/sjs/export.min.js"></script>
+    <script src="/statics/sjs/light.js"></script>
+    <script src="/statics/sjs/ammap.js"></script>
+    <script src="/statics/sjs/worldLow.js"></script>
+    <script src="/statics/sjs/pie.js"></script>
+    <script src="/statics/sjs/amstock.js"></script>
+    <script src="/statics/sjs/amchart-init.js"></script>
+    <script src="https://kit.fontawesome.com/a0c361a166.js" crossorigin="anonymous"></script>
+
+    <script src="/statics/sjs/jquery.simpleWeather.min.js"></script>
+    <script src="/statics/sjs/weather-init.js"></script>
+    <script src="/statics/sjs/owl.carousel.min.js"></script>
+    <script src="/statics/sjs/owl.carousel-init.js"></script>
+    <script src="/statics/sjs/scripts.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/statics/sjs/custom.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".logout_button").click(function(event) {
+                event.preventDefault();
+                var logout_button = $(".logout_button").val();
+                localStorage.clear();
+                navigateToLogin();
+
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+
+</body>
+
+</html>

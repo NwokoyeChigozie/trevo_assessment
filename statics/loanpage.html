@@ -321,17 +321,17 @@
                             }),
                         };
 
-                        // $.ajax(settings).done(function(response) {
-                        //     console.log(response);
-                        //     if (response.status == 200) {
-                        //         var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
-                        //         $(".et_message").html(message);
-                        //     } else {
-                        //         var response = JSON.parse(response);
-                        //         var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
-                        //         $(".et_message").html(message);
-                        //     }
-                        // });
+                        $.ajax(settings).done(function(response) {
+                            console.log(response);
+                            if (response.status == 200) {
+                                var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                                $(".et_message").html(message);
+                            } else {
+                                var response = JSON.parse(response);
+                                var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                                $(".et_message").html(message);
+                            }
+                        });
                         link = FlutterPay(pay_loan_amount)
                         window.location = link;
                         $("#pay_loan_button").val('Pay Back Loan');

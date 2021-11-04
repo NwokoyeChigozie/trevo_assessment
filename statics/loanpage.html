@@ -41,10 +41,10 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="?a=account">
                         <!-- Logo icon -->
-                        <b><img src="/statics/img/slogo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="/statics/img/logo.png" alt="homepage" class="dark-logo" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="/statics/img/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        <span><img src="/statics/img/logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -321,19 +321,19 @@
                             }),
                         };
 
-                        $.ajax(settings).done(function(response) {
-                            console.log(response);
-                            if (response.status == 200) {
-                                var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
-                                $(".et_message").html(message);
-                            } else {
-                                var response = JSON.parse(response);
-                                var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
-                                $(".et_message").html(message);
-                            }
-                        });
+                        // $.ajax(settings).done(function(response) {
+                        //     console.log(response);
+                        //     if (response.status == 200) {
+                        //         var message = '<div class="alert alert-success" style="border-radius:3px;text-align:center;background-color:green;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                        //         $(".et_message").html(message);
+                        //     } else {
+                        //         var response = JSON.parse(response);
+                        //         var message = '<div class="alert alert-danger" style="border-radius:3px;text-align:center;background-color:#E23D28;color:#fff;padding:10px 85px;margin-top:0px">' + response.message + '</div>';
+                        //         $(".et_message").html(message);
+                        //     }
+                        // });
                         link = FlutterPay(pay_loan_amount)
-                        window.location = link;
+                            // window.location = link;
                         $("#pay_loan_button").val('Pay Back Loan');
 
                     });
@@ -351,7 +351,7 @@
                                 "tx_ref": "" + Math.random().toString(36).slice(2) + "",
                                 "amount": pay_amount,
                                 "currency": "USD",
-                                "redirect_url": "localhost:7000/loan",
+                                "redirect_url": "https://trove-assessment.herokuapp.com/loan",
                                 "payment_options": "card",
                                 "customer": {
                                     "email": customerEmail,
@@ -366,6 +366,7 @@
                         console.log(settings)
                         $.ajax(settings).done(function(response) {
                             console.log(response);
+                            console.log(response.data.link);
                             return response.data.link
                         });
                     }

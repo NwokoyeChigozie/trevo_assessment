@@ -143,9 +143,9 @@
                                 <div class="col-lg-6 col-md-6 mb-20">
                                     <input type=password name="password" required id="register_password" value='' placeholder="Password" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
                                 </div>
-                                <!-- <div class="col-lg-6 col-md-6 mb-20">
-                                    <input type=password name="password2" id="register_password2" value='' placeholder="Confirm Password" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
-                                </div> -->
+                                <div class="col-lg-6 col-md-6 mb-20">
+                                    <input type=password name="password2" required id="register_password2" value='' placeholder="Confirm Password" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
+                                </div>
                                 <div class="col-lg-6 col-md-6 mb-20">
                                     <input type="email" required name="email" id="register_email" value='' placeholder="E-mail Address" style=" width: 100%;height: 50px; border: 1px solid #ddd; padding: 0 15px;">
                                 </div>
@@ -186,6 +186,11 @@
                 var full_name = $("#register_fullname").val();
                 var email = $("#register_email").val();
                 var password = $("#register_password").val();
+                var password2 = $("#register_password2").val();
+                if (password != password2) {
+                    error("passwords do not match");
+                    return false;
+                }
                 // var password2 = $("#register_password2").val();
 
                 $(".reg_message").html(' ');

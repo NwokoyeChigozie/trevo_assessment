@@ -11,8 +11,8 @@ require (
 	github.com/joho/godotenv v1.4.0
 	github.com/mitchellh/mapstructure v1.4.2
 	github.com/rs/cors v1.8.0
-	go.mongodb.org/mongo-driver v1.7.3
-	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97
+	go.mongodb.org/mongo-driver v1.7.4
+	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519
 )
 
 require (
